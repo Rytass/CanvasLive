@@ -1,0 +1,12 @@
+{
+  "name": "vote-live",
+  "version": "0.1.0",
+  "description": "Vote on live streaming",
+  "main": "index.js",
+  "repository": {
+    "url": "git@github.com:Rytass/VoteLive.git",
+    "type": "git"
+  },
+  "author": "Chia Yu Pai <fantasyatelier@gmail.com>",
+  "license": "MIT"
+}
