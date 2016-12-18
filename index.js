@@ -67,7 +67,7 @@ function onLive(rtmpUrl) {
   const canvasStream = new CanvasStream();
 
   ffmpeg(canvasStream)
-    .inputOptions('-r 30')
+    .inputOptions('-re')
     .inputOptions('-c:v png')
     .inputOptions('-f image2pipe')
     .inputOptions('-f lavfi')
