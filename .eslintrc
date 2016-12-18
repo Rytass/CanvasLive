@@ -1,0 +1,55 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+    }
+  },
+  "plugins": [
+    "react",
+  ],
+  "globals": {
+    "document": false,
+    "localStorage": false,
+    "fetch": false,
+    "alert": false,
+  },
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "rules": {
+    "no-bitwise": [2, {
+      "allow": ["~"],
+      "int32Hint": true,
+    }],
+    "import/extensions": [0],
+    "import/no-extraneous-dependencies" : [0],
+    "no-alert": [0],
+    "max-len": [2, {
+      "code": 130,
+    }],
+    "no-underscore-dangle": [2, {
+      "allowAfterThis": true,
+    }],
+    "no-console": [0],
+    "react/jsx-closing-bracket-location": [2, {
+      "nonEmpty": "after-props",
+      "selfClosing": "after-props",
+    }],
+    "new-cap": [2, {
+      "capIsNewExceptions": [
+        "Sequelize.ENUM",
+      ],
+    }],
+    "no-param-reassign": [2, {
+      "props": false,
+    }],
+    "comma-dangle": [2, "always-multiline"],
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "0.15.4",
+    },
+  }
+}

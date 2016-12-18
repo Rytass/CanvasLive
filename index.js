@@ -1,8 +1,6 @@
 import ffmpeg from 'fluent-ffmpeg';
 import Canvas from 'canvas';
-import path from 'path';
 import debug from 'debug';
-import http from 'http';
 import { Readable } from 'stream';
 import fs from 'fs';
 import request from 'request';
@@ -77,13 +75,8 @@ function onLive(rtmpUrl) {
     .on('start', (command) => {
       debugFFMPEG(`Spawn ffmpeg: ${command}`);
     })
-    .on('codecData', (data) => {
-      debugFFMPEG('Input is ' + data.audio + ' audio ' + 'with ' + data.video + ' video');
-    })
     .on('progress', (progress) => {
       if (progress.percent) {
-        debugFFMPEG('Processing: ' + progress.percent + '% done', progress);
-      } else {
         debugFFMPEG(`Processing: ${progress.frames} frames done.\t${progress.timemark} (FPS: ${progress.currentFps})`);
       }
     })
@@ -116,7 +109,7 @@ if (!FB_TOKEN) {
 
 request.post(`https://graph.facebook.com/me/live_videos?access_token=${FB_TOKEN}`, (err, res, body) => {
   if (err) {
-    console.error(`FB API Error`, err.toString());
+    console.error('FB API Error', err.toString());
   } else {
     try {
       const data = JSON.parse(body);

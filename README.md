@@ -2,7 +2,21 @@
 
 Live streaming on facebook from node.js canvas
 
-## Important! This repo is under development, please don't use on production projects.
+__IMPORTANT! This repo is under development, please don't use on production projects.__
+
+## Requirements
+
+- Cairo
+- ffmpeg
+
+### Mac OS
+
+Install by brew
+
+```shell
+brew install cairo
+brew install ffmpeg
+```
 
 ## Permission
 
